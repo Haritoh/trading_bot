@@ -12,7 +12,7 @@ from threading import Thread
 MT5_LOGIN = os.getenv("MT5_LOGIN")
 MT5_PASSWORD = os.getenv("MT5_PASSWORD")
 MT5_SERVER = os.getenv("MT5_SERVER")
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+#TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # 🔹 Conectar con MetaTrader 5
@@ -23,7 +23,7 @@ def connect_mt5():
         print("❌ Error al conectar a MetaTrader 5:", mt5.last_error())
 
 # 🔹 Configurar Telegram
-bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
+bot = telebot.TeleBot('7798043681:AAEhy9XwuGvsBL35vqJvkuoM6ILpbm3eTtg')
 
 # 🔹 Base de Datos para registro de operaciones
 conn = sqlite3.connect("trading_history.db")
