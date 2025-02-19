@@ -1,0 +1,24 @@
+name: Trading Bot
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Ejecuta el bot cada 30 minutos
+  workflow_dispatch:  # Permite ejecución manual
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar bot
+        run: python trading_bot.py
