@@ -8,7 +8,7 @@ on:
 
 jobs:
   run_bot:
-    runs-on: ubuntu-latest  # Puedes cambiar a otro sistema operativo si lo prefieres
+    runs-on: [self-hosted, windows]  # Puedes cambiar a otro sistema operativo si lo prefieres
 
     steps:
       - name: Checkout repository
